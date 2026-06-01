@@ -1,7 +1,18 @@
 import 'package:flutter/material.dart';
+import '../../services/auth_service.dart';
 
-class RegisterPage extends StatelessWidget {
+class RegisterPage extends StatefulWidget {
   const RegisterPage({super.key});
+
+  @override
+  State<RegisterPage> createState() => _RegisterPageState();
+}
+
+class _RegisterPageState extends State<RegisterPage> {
+
+  final emailController = TextEditingController();
+
+  final passwordController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -18,7 +29,8 @@ class RegisterPage extends StatelessWidget {
           children: [
 
             TextField(
-              decoration: InputDecoration(
+              controller: emailController,
+              decoration: const InputDecoration(
                 hintText: "Email",
                 border: OutlineInputBorder(),
               ),
@@ -27,8 +39,9 @@ class RegisterPage extends StatelessWidget {
             const SizedBox(height: 15),
 
             TextField(
+              controller: passwordController,
               obscureText: true,
-              decoration: InputDecoration(
+              decoration: const InputDecoration(
                 hintText: "Password",
                 border: OutlineInputBorder(),
               ),
@@ -41,10 +54,46 @@ class RegisterPage extends StatelessWidget {
               height: 50,
 
               child: ElevatedButton(
-                onPressed: () {},
+                onPressed: () async {
+
+                  try {
+
+                    await AuthService().register(
+                      email: emailController.text.trim(),
+                      password: passwordController.text.trim(),
+                    );
+
+                    if (mounted) {
+
+                      ScaffoldMessenger.of(context)
+                          .showSnackBar(
+
+                        const SnackBar(
+                          content: Text(
+                            'Registrasi berhasil',
+                          ),
+                        ),
+                      );
+
+                      Navigator.pop(context);
+                    }
+
+                  } catch (e) {
+
+                    ScaffoldMessenger.of(context)
+                        .showSnackBar(
+
+                      SnackBar(
+                        content: Text(
+                          e.toString(),
+                        ),
+                      ),
+                    );
+                  }
+                },
                 child: const Text("Daftar"),
               ),
-            )
+            ),
           ],
         ),
       ),
