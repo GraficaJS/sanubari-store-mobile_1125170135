@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'firebase_options.dart';
+import 'screens/auth/login_page.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -22,14 +23,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Sanubari Store',
-      home: Scaffold(
-        appBar: AppBar(
-          title: const Text('Sanubari Store'),
-        ),
-        body: const Center(
-          child: Text('Firebase Connected'),
-        ),
-      ),
+      home: const LoginPage(),
     );
   }
 }
