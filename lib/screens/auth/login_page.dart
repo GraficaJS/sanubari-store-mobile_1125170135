@@ -1,8 +1,26 @@
 import 'package:flutter/material.dart';
+import '../../services/auth_service.dart';
 import 'register_page.dart';
 
-class LoginPage extends StatelessWidget {
+class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
+
+  @override
+  State<LoginPage> createState() => _LoginPageState();
+}
+
+class _LoginPageState extends State<LoginPage> {
+
+  final emailController = TextEditingController();
+
+  final passwordController = TextEditingController();
+
+  @override
+  void dispose() {
+    emailController.dispose();
+    passwordController.dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -39,7 +57,8 @@ class LoginPage extends StatelessWidget {
               const SizedBox(height: 30),
 
               TextField(
-                decoration: InputDecoration(
+                controller: emailController,
+                decoration: const InputDecoration(
                   hintText: "Email",
                   border: OutlineInputBorder(),
                 ),
@@ -48,8 +67,9 @@ class LoginPage extends StatelessWidget {
               const SizedBox(height: 15),
 
               TextField(
+                controller: passwordController,
                 obscureText: true,
-                decoration: InputDecoration(
+                decoration: const InputDecoration(
                   hintText: "Password",
                   border: OutlineInputBorder(),
                 ),
@@ -61,7 +81,32 @@ class LoginPage extends StatelessWidget {
                 width: double.infinity,
                 height: 50,
                 child: ElevatedButton(
-                  onPressed: () {},
+                  onPressed: () async {
+
+                    try {
+
+                      await AuthService().login(
+                        email: emailController.text.trim(),
+                        password: passwordController.text.trim(),
+                      );
+
+                      if (mounted) {
+                        Navigator.pushReplacementNamed(
+                          context,
+                          '/dashboard',
+                        );
+                      }
+
+                    } catch (e) {
+
+                      ScaffoldMessenger.of(context)
+                          .showSnackBar(
+                        SnackBar(
+                          content: Text(e.toString()),
+                        ),
+                      );
+                    }
+                  },
                   child: const Text("Masuk"),
                 ),
               ),
@@ -70,13 +115,15 @@ class LoginPage extends StatelessWidget {
 
               TextButton(
                 onPressed: () {
+
                   Navigator.push(
                     context,
-                      MaterialPageRoute(
-                        builder: (_) => const RegisterPage(),
-                      ),
-                    );
-                  },
+                    MaterialPageRoute(
+                      builder: (_) => const RegisterPage(),
+                    ),
+                  );
+
+                },
                 child: const Text("Daftar"),
               ),
             ],
