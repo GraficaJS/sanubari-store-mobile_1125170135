@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "417761038287",
+    "project_id": "sanubari-store",
+    "storage_bucket": "sanubari-store.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:417761038287:android:b9e1da405a1b03b34b8cba",
+        "android_client_info": {
+          "package_name": "com.example.sanubari_store"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCJB_O_SMXTAP1-GeHgn1vrgOsEBa0RqN8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:417761038287:android:21670502205869524b8cba",
+        "android_client_info": {
+          "package_name": "com.example.sanubari_store_1125170135"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCJB_O_SMXTAP1-GeHgn1vrgOsEBa0RqN8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
