@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import '../services/auth_service.dart';
 import '../widgets/product_card.dart';
+import 'category_page.dart';
 
 class DashboardPage extends StatelessWidget {
   const DashboardPage({super.key});
@@ -12,22 +13,23 @@ class DashboardPage extends StatelessWidget {
         title: const Text("Dashboard"),
 
         actions: [
-          IconButton(
-            onPressed: () async {
 
-              await AuthService().logout();
+  IconButton(
+    icon: const Icon(Icons.category),
 
-              if (context.mounted) {
-                Navigator.pushNamedAndRemoveUntil(
-                  context,
-                  '/',
-                  (route) => false,
-                );
-              }
-            },
-            icon: const Icon(Icons.logout),
-          ),
-        ],
+    onPressed: () {
+
+      Navigator.push(
+        context,
+
+        MaterialPageRoute(
+          builder: (_) =>
+              const CategoryPage(),
+        ),
+      );
+    },
+  ),
+],
       ),
 
       body: Padding(
