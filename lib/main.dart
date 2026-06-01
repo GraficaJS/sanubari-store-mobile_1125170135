@@ -16,8 +16,20 @@ void main() async {
   );
 
   runApp(
-    const MyApp(),
-  );
+
+  MultiProvider(
+
+    providers: [
+
+      ChangeNotifierProvider(
+        create: (_) =>
+            AuthProvider(),
+      ),
+    ],
+
+    child: const MyApp(),
+  ),
+);
 }
 
 class MyApp extends StatelessWidget {
