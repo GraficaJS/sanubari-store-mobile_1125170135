@@ -11,14 +11,11 @@ var DB *sql.DB
 func ConnectDB() {
 
 	db, err := sql.Open(
-
 		"mysql",
-
-		"root:PASSWORD@tcp(127.0.0.1:3306)/sanubari_store",
+		"root:admin@tcp(127.0.0.1:3306)/sanubari_store",
 	)
 
 	if err != nil {
-
 		panic(err)
 	}
 
