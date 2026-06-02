@@ -4,16 +4,12 @@ import 'package:provider/provider.dart';
 
 import 'firebase_options.dart';
 
-import 'screens/auth/login_page.dart';
-import 'screens/dashboard_page.dart';
 import 'screens/splash_page.dart';
+import 'screens/main_navigation.dart';
 
 import 'providers/auth_provider.dart';
 import 'providers/product_provider.dart';
 import 'providers/cart_provider.dart';
-
-import 'screens/main_navigation.dart';
-
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -55,7 +51,7 @@ class MyApp extends StatelessWidget {
 
       routes: {
         '/dashboard': (context) =>
-            const DashboardPage(),
+            const MainNavigation(),
       },
 
       home: const SplashPage(),
