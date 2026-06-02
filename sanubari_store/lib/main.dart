@@ -6,6 +6,7 @@ import 'firebase_options.dart';
 
 import 'screens/auth/login_page.dart';
 import 'screens/dashboard_page.dart';
+import 'screens/splash_page.dart';
 
 import 'providers/auth_provider.dart';
 import 'providers/product_provider.dart';
@@ -54,7 +55,7 @@ class MyApp extends StatelessWidget {
             const DashboardPage(),
       },
 
-      home: const LoginPage(),
+      home: const SplashPage(),
     );
   }
 }
