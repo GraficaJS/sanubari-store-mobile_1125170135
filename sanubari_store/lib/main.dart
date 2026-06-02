@@ -1,13 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
+import 'package:provider/provider.dart';
 
 import 'firebase_options.dart';
+
 import 'screens/auth/login_page.dart';
 import 'screens/dashboard_page.dart';
 
-import 'package:provider/provider.dart';
 import 'providers/auth_provider.dart';
 import 'providers/product_provider.dart';
+import 'providers/cart_provider.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -28,6 +30,10 @@ void main() async {
           create: (_) => ProductProvider(),
         ),
 
+        ChangeNotifierProvider(
+          create: (_) => CartProvider(),
+        ),
+
       ],
       child: const MyApp(),
     ),
@@ -44,7 +50,8 @@ class MyApp extends StatelessWidget {
       title: 'Sanubari Store',
 
       routes: {
-        '/dashboard': (context) => const DashboardPage(),
+        '/dashboard': (context) =>
+            const DashboardPage(),
       },
 
       home: const LoginPage(),
