@@ -12,6 +12,9 @@ import 'providers/auth_provider.dart';
 import 'providers/product_provider.dart';
 import 'providers/cart_provider.dart';
 
+import 'screens/main_navigation.dart';
+
+
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
