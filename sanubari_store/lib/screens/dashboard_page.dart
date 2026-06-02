@@ -4,9 +4,6 @@ import 'package:provider/provider.dart';
 import '../providers/product_provider.dart';
 import '../widgets/product_card.dart';
 
-import 'category_page.dart';
-import 'cart_page.dart';
-
 class DashboardPage extends StatefulWidget {
   const DashboardPage({super.key});
 
@@ -36,47 +33,7 @@ class _DashboardPageState
     return Scaffold(
 
       appBar: AppBar(
-
         title: const Text("Dashboard"),
-
-        actions: [
-
-          IconButton(
-            icon: const Icon(Icons.category),
-
-            onPressed: () {
-
-              Navigator.push(
-                context,
-
-                MaterialPageRoute(
-                  builder: (_) =>
-                      const CategoryPage(),
-                ),
-              );
-            },
-          ),
-
-          IconButton(
-
-            icon:
-                const Icon(Icons.shopping_cart),
-
-            onPressed: () {
-
-              Navigator.push(
-
-                context,
-
-                MaterialPageRoute(
-
-                  builder: (_) =>
-                      const CartPage(),
-                ),
-              );
-            },
-          ),
-        ],
       ),
 
       body: Consumer<ProductProvider>(
