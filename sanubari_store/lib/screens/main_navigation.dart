@@ -36,10 +36,11 @@ class _MainNavigationState
 
       body: pages[selectedIndex],
 
-      bottomNavigationBar:
-          BottomNavigationBar(
+      bottomNavigationBar: BottomNavigationBar(
 
         currentIndex: selectedIndex,
+
+        type: BottomNavigationBarType.fixed,
 
         onTap: (index) {
 
