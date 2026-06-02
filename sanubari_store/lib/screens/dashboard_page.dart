@@ -1,101 +1,120 @@
 import 'package:flutter/material.dart';
-import '../services/auth_service.dart';
+import 'package:provider/provider.dart';
+
 import '../widgets/product_card.dart';
+import '../providers/product_provider.dart';
+
 import 'category_page.dart';
 
-class DashboardPage extends StatelessWidget {
+class DashboardPage extends StatefulWidget {
   const DashboardPage({super.key});
 
   @override
+  State<DashboardPage> createState() =>
+      _DashboardPageState();
+}
+
+class _DashboardPageState
+    extends State<DashboardPage> {
+
+  @override
+  void initState() {
+    super.initState();
+
+    Future.microtask(() {
+
+      context
+          .read<ProductProvider>()
+          .getProducts();
+
+    });
+  }
+
+  @override
   Widget build(BuildContext context) {
+
     return Scaffold(
+
       appBar: AppBar(
+
         title: const Text("Dashboard"),
 
         actions: [
 
-  IconButton(
-    icon: const Icon(Icons.category),
+          IconButton(
 
-    onPressed: () {
+            icon: const Icon(Icons.category),
 
-      Navigator.push(
-        context,
+            onPressed: () {
 
-        MaterialPageRoute(
-          builder: (_) =>
-              const CategoryPage(),
-        ),
-      );
-    },
-  ),
-],
+              Navigator.push(
+
+                context,
+
+                MaterialPageRoute(
+                  builder: (_) =>
+                      const CategoryPage(),
+                ),
+              );
+            },
+          ),
+        ],
       ),
 
-      body: Padding(
+      body: Consumer<ProductProvider>(
 
-  padding:
-      const EdgeInsets.all(12),
+        builder: (context, provider, _) {
 
-  child: GridView.count(
+          if (provider.isLoading) {
 
-    crossAxisCount: 2,
+            return const Center(
+              child:
+                  CircularProgressIndicator(),
+            );
+          }
 
-    crossAxisSpacing: 10,
+          return Padding(
 
-    mainAxisSpacing: 10,
+            padding:
+                const EdgeInsets.all(12),
 
-    children: const [
+            child: GridView.builder(
 
-      ProductCard(
+              itemCount:
+                  provider.products.length,
 
-        name: 'Adidas Samba',
+              gridDelegate:
+                  const SliverGridDelegateWithFixedCrossAxisCount(
 
-        image:
-            'https://images.unsplash.com/photo-1542291026-7eec264c27ff',
+                crossAxisCount: 2,
 
-        price:
-            'Rp 1.500.000',
+                crossAxisSpacing: 10,
+
+                mainAxisSpacing: 10,
+              ),
+
+              itemBuilder:
+                  (context, index) {
+
+                final product =
+                    provider.products[index];
+
+                return ProductCard(
+
+                  name:
+                      product["name"],
+
+                  image:
+                      product["image_url"],
+
+                  price:
+                      "Rp ${product["price"]}",
+                );
+              },
+            ),
+          );
+        },
       ),
-
-      ProductCard(
-
-        name:
-            'New Balance 530',
-
-        image:
-            'https://images.unsplash.com/photo-1549298916-b41d501d3772',
-
-        price:
-            'Rp 1.800.000',
-      ),
-
-      ProductCard(
-
-        name:
-            'Nike Air Force',
-
-        image:
-            'https://images.unsplash.com/photo-1600185365483-26d7a4cc7519',
-
-        price:
-            'Rp 2.000.000',
-      ),
-
-      ProductCard(
-
-        name:
-            'Converse High',
-
-        image:
-            'https://images.unsplash.com/photo-1491553895911-0055eca6402d',
-
-        price:
-            'Rp 950.000',
-      ),
-    ],
-  ),
-),
     );
   }
 }
