@@ -7,6 +7,7 @@ import 'screens/dashboard_page.dart';
 
 import 'package:provider/provider.dart';
 import 'providers/auth_provider.dart';
+import 'providers/product_provider.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -16,20 +17,21 @@ void main() async {
   );
 
   runApp(
+    MultiProvider(
+      providers: [
 
-  MultiProvider(
+        ChangeNotifierProvider(
+          create: (_) => AuthProvider(),
+        ),
 
-    providers: [
+        ChangeNotifierProvider(
+          create: (_) => ProductProvider(),
+        ),
 
-      ChangeNotifierProvider(
-        create: (_) =>
-            AuthProvider(),
-      ),
-    ],
-
-    child: const MyApp(),
-  ),
-);
+      ],
+      child: const MyApp(),
+    ),
+  );
 }
 
 class MyApp extends StatelessWidget {
