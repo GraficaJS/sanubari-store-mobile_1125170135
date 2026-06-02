@@ -1,4 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+
+import '../providers/cart_provider.dart';
+import '../models/cart_item.dart';
 
 class ProductDetailPage extends StatelessWidget {
 
@@ -68,6 +72,55 @@ class ProductDetailPage extends StatelessWidget {
 
             const Text(
               "Sepatu original dengan kualitas premium.",
+            ),
+
+            const SizedBox(height: 30),
+
+            SizedBox(
+              width: double.infinity,
+              height: 50,
+
+              child: ElevatedButton(
+
+                onPressed: () {
+
+                  context
+                      .read<CartProvider>()
+                      .addToCart(
+
+                    CartItem(
+
+                      id: 1,
+
+                      name: name,
+
+                      image: image,
+
+                      price: double.parse(
+                        price
+                            .replaceAll('Rp ', '')
+                            .replaceAll('.', ''),
+                      ),
+
+                      qty: 1,
+                    ),
+                  );
+
+                  ScaffoldMessenger.of(context)
+                      .showSnackBar(
+
+                    const SnackBar(
+                      content: Text(
+                        'Produk ditambahkan',
+                      ),
+                    ),
+                  );
+                },
+
+                child: const Text(
+                  'Tambah ke Keranjang',
+                ),
+              ),
             ),
           ],
         ),
