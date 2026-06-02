@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import '../../services/auth_service.dart';
 import 'register_page.dart';
+import '../main_navigation.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
@@ -91,13 +92,15 @@ class _LoginPageState extends State<LoginPage> {
                       );
 
                       if (mounted) {
-                        Navigator.pushReplacementNamed(
+                        Navigator.pushReplacement(
                           context,
-                          '/dashboard',
-                        );
-                      }
-
-                    } catch (e) {
+                            MaterialPageRoute(
+                            builder: (_) =>
+                              const MainNavigation(),
+                               ),
+                          );
+                       }
+                     } catch (e) {
 
                       ScaffoldMessenger.of(context)
                           .showSnackBar(
