@@ -4,48 +4,6 @@ Aplikasi UAS Mobile Lanjutan berbasis Flutter untuk katalog dan pemesanan sepatu
 
 ---
 
-## 📱 Tampilan Aplikasi
-
-### 🚀 Splash Screen
-
-Menampilkan logo dan nama aplikasi sebelum masuk ke halaman login.
-<img width="1080" height="2400" alt="SplashScreen" src="https://github.com/user-attachments/assets/a78ff46c-a789-454b-803f-dd3b37f9d092" />
-
-### 🔐 Login
-
-Halaman login pengguna menggunakan email dan password Firebase Authentication.
-<img width="1080" height="2400" alt="Login (2)" src="https://github.com/user-attachments/assets/dbba8c96-c8b3-4cf1-92dc-7cad4bd6a679" />
-
-### 📝 Register
-
-Halaman registrasi akun baru menggunakan email dan password.
-<img width="1080" height="2400" alt="Register (2)" src="https://github.com/user-attachments/assets/2c29dd5f-3ee3-4d7c-b4fd-8667afec12cd" />
-
-### 🏠 Dashboard
-
-Menampilkan daftar produk sepatu yang diambil dari API Golang dan database MySQL.
-<img width="720" height="1600" alt="dashboard" src="https://github.com/user-attachments/assets/a0753339-ac32-4b35-8103-c142f97b78b3" />
-
-### 📂 Category
-
-Menampilkan kategori produk yang tersedia.
-<img width="1080" height="2400" alt="kategori" src="https://github.com/user-attachments/assets/df68c53c-e803-4880-9829-6c6622a6ae26" />
-
-### 👟 Detail Produk
-
-Menampilkan informasi produk berupa gambar, nama, harga, dan tombol tambah ke keranjang.
-<img width="720" height="1600" alt="detail produk" src="https://github.com/user-attachments/assets/e675c937-6423-46a3-a3a6-8105b50b4c4a" />
-
-### 🛒 Cart
-
-Menampilkan daftar produk yang ditambahkan ke keranjang beserta total belanja.
-<img width="1080" height="2400" alt="keranjang" src="https://github.com/user-attachments/assets/0ed1e187-92e6-4f07-aed2-554524a33ef7" />
-
-### 👤 Profile
-
-Menampilkan informasi akun pengguna yang sedang login serta tombol logout.
-<img width="1080" height="2400" alt="profil" src="https://github.com/user-attachments/assets/77764e22-fc95-4e5a-98cd-8b8fb8d14b9f" />
-
 ### 📱 Bottom Navigation
 
 Navigasi utama aplikasi:
@@ -99,7 +57,6 @@ Navigasi utama aplikasi:
 * GitHub
 
 ---
-
 ## 📂 Struktur Project
 
 UAS_SANUBARI_STORE
@@ -131,11 +88,15 @@ UAS_SANUBARI_STORE
 ├── routes/
 
 └── main.go
-
 ---
+## 🔗 API Endpoint
 
+GET
+
+/api/products
+
+Digunakan untuk mengambil daftar produk dari database MySQL.
 ---
-
 ## 🗄️ Database
 
 Database menggunakan MySQL dengan tabel:
@@ -152,9 +113,7 @@ Kolom utama:
 * price
 * stock
 * created_at
-
 ---
-
 ## 🎓 Tentang Proyek
 
 Dikembangkan untuk memenuhi tugas UAS Mobile Lanjutan.
@@ -166,3 +125,28 @@ NIM: 1125170135
 Program Studi: Teknologi Informasi
 
 Tujuan proyek ini adalah mengintegrasikan Flutter dengan backend Golang dan database MySQL untuk membangun aplikasi marketplace sederhana yang menerapkan autentikasi, REST API, state management, dan navigasi modern pada perangkat mobile.
+
+## 📱 Tampilan Aplikasi
+
+### 🚀 Splash Screen, Login, Register,
+Menampilkan logo dan nama aplikasi sebelum masuk ke halaman login.
+<img width="1080" height="2400" alt="SplashScreen" src="https://github.com/user-attachments/assets/807819bd-134d-4b41-bb56-966323ad4465" />
+Halaman login pengguna menggunakan email dan password Firebase Authentication.
+<img width="1080" height="2400" alt="Login (2)" src="https://github.com/user-attachments/assets/98f2f1f5-721a-4fe6-bd9c-25e3c273a7ec" />
+Halaman registrasi akun baru menggunakan email dan password.
+<img width="1080" height="2400" alt="Register (2)" src="https://github.com/user-attachments/assets/8406ab60-cd79-4dd0-81ee-c2105640f2d0" />
+
+### 🏠 Dashboard, category, detail produk, cart
+Menampilkan daftar produk sepatu yang diambil dari API Golang dan database MySQL.
+<img width="720" height="1600" alt="dashboard" src="https://github.com/user-attachments/assets/3cfa7c9c-c76d-46ee-bb3c-e82efb4aaaa1" />
+Menampilkan kategori produk yang tersedia.
+<img width="1080" height="2400" alt="kategori" src="https://github.com/user-attachments/assets/abb5f537-ad0c-41b5-9e4b-da2b934ace09" />
+Menampilkan informasi produk berupa gambar, nama, harga, dan tombol tambah ke keranjang.
+<img width="720" height="1600" alt="detail produk" src="https://github.com/user-attachments/assets/26786cae-a79c-4a60-9545-d1940a60e694" />
+Menampilkan daftar produk yang ditambahkan ke keranjang beserta total belanja.
+<img width="1080" height="2400" alt="keranjang" src="https://github.com/user-attachments/assets/e61cfaa2-a4c7-4c9e-b1f0-f879203b8b05" />
+
+### 👤 Profile
+Menampilkan informasi akun pengguna yang sedang login serta tombol logout.
+<img width="1080" height="2400" alt="profil" src="https://github.com/user-attachments/assets/312266e5-b34c-421d-a033-788a01171853" />
+
