@@ -57,7 +57,6 @@ Navigasi utama aplikasi:
 * GitHub
 
 ---
-
 ## 📂 Struktur Project
 
 UAS_SANUBARI_STORE
@@ -89,9 +88,7 @@ UAS_SANUBARI_STORE
 ├── routes/
 
 └── main.go
-
 ---
-
 ## 🔗 API Endpoint
 
 GET
@@ -99,9 +96,7 @@ GET
 /api/products
 
 Digunakan untuk mengambil daftar produk dari database MySQL.
-
 ---
-
 ## 🗄️ Database
 
 Database menggunakan MySQL dengan tabel:
@@ -118,9 +113,7 @@ Kolom utama:
 * price
 * stock
 * created_at
-
 ---
-
 ## 🎓 Tentang Proyek
 
 Dikembangkan untuk memenuhi tugas UAS Mobile Lanjutan.
@@ -128,6 +121,10 @@ Dikembangkan untuk memenuhi tugas UAS Mobile Lanjutan.
 Nama: [Grafica Jati Sugiyarto]
 
 NIM: 1125170135
+
+Program Studi: Teknologi Informasi
+
+Tujuan proyek ini adalah mengintegrasikan Flutter dengan backend Golang dan database MySQL untuk membangun aplikasi marketplace sederhana yang menerapkan autentikasi, REST API, state management, dan navigasi modern pada perangkat mobile.
 
 ## 📱 Tampilan Aplikasi
 
@@ -149,12 +146,7 @@ Menampilkan informasi produk berupa gambar, nama, harga, dan tombol tambah ke ke
 Menampilkan daftar produk yang ditambahkan ke keranjang beserta total belanja.
 <img width="1080" height="2400" alt="keranjang" src="https://github.com/user-attachments/assets/e61cfaa2-a4c7-4c9e-b1f0-f879203b8b05" />
 
-### 👤 Profile, 
+### 👤 Profile
 Menampilkan informasi akun pengguna yang sedang login serta tombol logout.
 <img width="1080" height="2400" alt="profil" src="https://github.com/user-attachments/assets/312266e5-b34c-421d-a033-788a01171853" />
 
-
-
-Program Studi: Teknologi Informasi
-
-Tujuan proyek ini adalah mengintegrasikan Flutter dengan backend Golang dan database MySQL untuk membangun aplikasi marketplace sederhana yang menerapkan autentikasi, REST API, state management, dan navigasi modern pada perangkat mobile.
