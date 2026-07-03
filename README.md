@@ -6,17 +6,13 @@ Aplikasi UAS Mobile Lanjutan berbasis Flutter untuk katalog dan pemesanan sepatu
 
 ## 📱 Tampilan Aplikasi
 
-### 🚀 Splash Screen
-
+### 🚀 Splash Screen, Login, Register,
 Menampilkan logo dan nama aplikasi sebelum masuk ke halaman login.
-
-### 🔐 Login
-
+<img width="1080" height="2400" alt="SplashScreen" src="https://github.com/user-attachments/assets/807819bd-134d-4b41-bb56-966323ad4465" />
 Halaman login pengguna menggunakan email dan password Firebase Authentication.
-
-### 📝 Register
-
+<img width="1080" height="2400" alt="Login (2)" src="https://github.com/user-attachments/assets/98f2f1f5-721a-4fe6-bd9c-25e3c273a7ec" />
 Halaman registrasi akun baru menggunakan email dan password.
+<img width="1080" height="2400" alt="Register (2)" src="https://github.com/user-attachments/assets/8406ab60-cd79-4dd0-81ee-c2105640f2d0" />
 
 ### 🏠 Dashboard
 
